@@ -68,8 +68,8 @@ class Client(object):
     def search(self, params):
         return self.get('/search/', params)
 
-    def get_collections(self):
-        return self.get('/collections')['collections']
+    def get_collections(self, page=1):
+        return self.get('/collections?page={}'.format(page))['collections']
 
     def get_collection(self, coll_id):
         return self.get('/collections/'+str(coll_id))
