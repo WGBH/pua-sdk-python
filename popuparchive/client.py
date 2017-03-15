@@ -58,7 +58,7 @@ class Client(object):
     def get(self, path, params={}):
         headers = {'Authorization': "Bearer " + self.access_token}
         resp = requests.get(self.host+'/api'+path, params=params, headers=headers)
-        return resp.json()
+        return resp
 
     def post(self, path, payload):
         headers = {'Authorization': "Bearer " + self.access_token}
